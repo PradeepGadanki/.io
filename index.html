@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pradeep - Lead Data Scientist</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            background: #000;
+            color: #f5f5f7;
+            overflow-x: hidden;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: saturate(180%) blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 22px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 44px;
+        }
+
+        .logo {
+            font-size: 21px;
+            font-weight: 600;
+            color: #f5f5f7;
+            letter-spacing: -0.01em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #f5f5f7;
+            font-size: 12px;
+            font-weight: 400;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+            letter-spacing: -0.01em;
+        }
+
+        .nav-links a:hover {
+            opacity: 1;
+        }
+
+        section {
+            position: relative;
+            width: 100%;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: #000;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 80px;
+            font-weight: 600;
+            letter-spacing: -0.015em;
+            line-height: 1.05;
+            margin-bottom: 12px;
+            background: linear-gradient(90deg, #f5f5f7 0%, #999 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 28px;
+            font-weight: 400;
+            color: #86868b;
+            margin-bottom: 24px;
+            letter-spacing: -0.01em;
+        }
+
+        .hero-links {
+            display: flex;
+            gap: 24px;
+            margin-top: 16px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .hero-links a {
+            font-size: 17px;
+            color: #2997ff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .hero-links a:hover {
+            text-decoration: underline;
+        }
+
+        .section {
+            padding: 120px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-eyebrow {
+            font-size: 17px;
+            font-weight: 600;
+            color: #f56300;
+            letter-spacing: 0.01em;
+            margin-bottom: 8px;
+        }
+
+        .section-title {
+            font-size: 56px;
+            font-weight: 600;
+            letter-spacing: -0.015em;
+            line-height: 1.07;
+            color: #f5f5f7;
+        }
+
+        .section-subtitle {
+            font-size: 28px;
+            font-weight: 400;
+            color: #86868b;
+            margin-top: 16px;
+            letter-spacing: -0.01em;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .about-text {
+            font-size: 21px;
+            line-height: 1.47;
+            color: #86868b;
+            letter-spacing: -0.01em;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .stat-card {
+            background: #1d1d1f;
+            border-radius: 18px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 600;
+            color: #f5f5f7;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 17px;
+            color: #86868b;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 12px;
+            margin-top: 60px;
+        }
+
+        .card {
+            background: #1d1d1f;
+            border-radius: 18px;
+            padding: 50px 40px;
+            transition: transform 0.3s, background 0.3s;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: scale(1.02);
+            background: #2d2d2f;
+        }
+
+        .card-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            letter-spacing: -0.01em;
+        }
+
+        .card p {
+            font-size: 17px;
+            color: #86868b;
+            line-height: 1.47;
+            letter-spacing: -0.01em;
+        }
+
+        .experience-timeline {
+            margin-top: 60px;
+        }
+
+        .experience-item {
+            background: #1d1d1f;
+            border-radius: 18px;
+            padding: 50px 40px;
+            margin-bottom: 20px;
+            transition: transform 0.3s, background 0.3s;
+            cursor: pointer;
+        }
+
+        .experience-item:hover {
+            transform: translateX(10px);
+            background: #2d2d2f;
+        }
+
+        .experience-header {
+            margin-bottom: 24px;
+        }
+
+        .experience-title {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            letter-spacing: -0.01em;
+        }
+
+        .experience-date {
+            font-size: 17px;
+            color: #f56300;
+            font-weight: 500;
+        }
+
+        .experience-highlights {
+            list-style: none;
+        }
+
+        .experience-highlights li {
+            font-size: 17px;
+            color: #86868b;
+            line-height: 1.6;
+            margin-bottom: 12px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .experience-highlights li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #f56300;
+            font-weight: bold;
+        }
+
+        .project-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 12px;
+            margin-top: 60px;
+        }
+
+        .project-card {
+            background: #1d1d1f;
+            border-radius: 18px;
+            padding: 60px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 400px;
+            transition: transform 0.3s, background 0.3s;
+            cursor: pointer;
+        }
+
+        .project-card:hover {
+            transform: scale(1.02);
+            background: #2d2d2f;
+        }
+
+        .project-eyebrow {
+            font-size: 12px;
+            font-weight: 600;
+            color: #f56300;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .project-title {
+            font-size: 40px;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            margin-bottom: 16px;
+        }
+
+        .project-description {
+            font-size: 21px;
+            color: #86868b;
+            line-height: 1.38;
+            letter-spacing: -0.01em;
+            margin-bottom: 24px;
+            flex-grow: 1;
+        }
+
+        .project-tech {
+            font-size: 14px;
+            color: #86868b;
+            margin-bottom: 20px;
+        }
+
+        .project-link {
+            font-size: 17px;
+            color: #2997ff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        .skills-section {
+            margin-top: 60px;
+        }
+
+        .skills-category {
+            background: #1d1d1f;
+            border-radius: 18px;
+            padding: 40px;
+            margin-bottom: 12px;
+        }
+
+        .skills-category h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #f5f5f7;
+        }
+
+        .skills-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: #2d2d2f;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: #86868b;
+        }
+
+        .contact-section {
+            background: #1d1d1f;
+            border-radius: 18px;
+            padding: 80px 60px;
+            text-align: center;
+            margin: 120px 20px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-title {
+            font-size: 56px;
+            font-weight: 600;
+            letter-spacing: -0.015em;
+            margin-bottom: 24px;
+        }
+
+        .contact-description {
+            font-size: 21px;
+            color: #86868b;
+            margin-bottom: 40px;
+            letter-spacing: -0.01em;
+        }
+
+        .contact-button {
+            display: inline-block;
+            background: #0071e3;
+            color: #fff;
+            font-size: 17px;
+            font-weight: 400;
+            padding: 14px 28px;
+            border-radius: 980px;
+            text-decoration: none;
+            transition: background 0.3s;
+            margin: 0 8px 16px;
+        }
+
+        .contact-button:hover {
+            background: #0077ed;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            margin-top: 48px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            font-size: 17px;
+            color: #86868b;
+        }
+
+        footer {
+            background: #1d1d1f;
+            padding: 60px 20px 40px;
+            margin-top: 120px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #86868b;
+            text-decoration: none;
+            font-size: 12px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #f5f5f7;
+        }
+
+        .footer-copyright {
+            font-size: 12px;
+            color: #86868b;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .hero p {
+                font-size: 21px;
+            }
+
+            .section-title {
+                font-size: 40px;
+            }
+
+            .section-subtitle {
+                font-size: 21px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-showcase {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-title {
+                font-size: 40px;
+            }
+
+            .nav-links {
+                gap: 16px;
+            }
+
+            .experience-item:hover {
+                transform: translateX(0);
+            }
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-indicator::after {
+            content: '';
+            display: block;
+            width: 20px;
+            height: 30px;
+            border: 2px solid rgba(245, 245, 247, 0.5);
+            border-radius: 12px;
+            position: relative;
+        }
+
+        .scroll-indicator::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 8px;
+            background: rgba(245, 245, 247, 0.5);
+            border-radius: 2px;
+            animation: scroll 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+
+        @keyframes scroll {
+            0% {
+                opacity: 0;
+                top: 8px;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                top: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">PRADEEP</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Lead Data Scientist.<br>AI Innovator.</h1>
+        <p>8+ years building intelligent systems with ML, GenAI & NLP</p>
+        <div class="hero-links">
+            <a href="#skills">View skills →</a>
+            <a href="#projects">See projects →</a>
+            <a href="https://github.com/PradeepGadanki" target="_blank">GitHub →</a>
+        </div>
+        <div class="scroll-indicator"></div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="section-header">
+            <div class="section-eyebrow">ABOUT</div>
+            <h2 class="section-title">Transforming data into<br>intelligent solutions.</h2>
+            <p class="section-subtitle">Specializing in GenAI, LLMs, and scalable ML systems</p>
+        </div>
+        <div class="about-grid">
+            <div class="about-text">
+                <p>Accomplished Lead Data Scientist with 8+ years of progressive experience designing, developing, and deploying advanced machine learning, GenAI, NLP, and data analytics solutions across finance, healthcare, technology, and retail sectors.</p>
+                <p>Expert in building and fine-tuning Large Language Models (LLMs) and Retrieval-Augmented Generation (RAG) pipelines using cutting-edge technologies, driving advanced Generative AI capabilities across customer service, content generation, and semantic search applications.</p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">8+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">ML Projects</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Industries</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Production Ready</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-header">
+            <div class="section-eyebrow">EXPERTISE</div>
+            <h2 class="section-title">Core capabilities.</h2>
+        </div>
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-icon">🤖</div>
+                <h3>Generative AI & LLMs</h3>
+                <p>Building RAG pipelines with LangChain, fine-tuning LLMs (GPT, BERT, LLaMA), and deploying production-grade AI systems with vector databases</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🧠</div>
+                <h3>Machine Learning</h3>
+                <p>End-to-end ML lifecycle management from feature engineering to deployment using PyTorch, TensorFlow, and scikit-learn</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📊</div>
+                <h3>Data Engineering</h3>
+                <p>Architecting scalable data pipelines with Apache Airflow, Spark, Databricks, and Snowflake for real-time analytics</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">☁️</div>
+                <h3>Cloud & MLOps</h3>
+                <p>Deploying ML systems on Azure, AWS, and GCP with Docker, Kubernetes, and CI/CD automation for seamless scaling</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <div class="section-header">
+            <div class="section-eyebrow">TECHNICAL SKILLS</div>
+            <h2 class="section-title">Technologies & tools.</h2>
+        </div>
+        <div class="skills-section">
+            <div class="skills-category">
+                <h3>GenAI & LLM Frameworks</h3>
+                <div class="skills-tags">
+                    <span class="skill-tag">LangChain</span>
+                    <span class="skill-tag">Hugging Face Transformers</span>
+                    <span class="skill-tag">OpenAI API</span>
+                    <span class="skill-tag">Azure OpenAI</span>
+                    <span class="skill-tag">LLaMA</span>
+                    <span class="skill-tag">BERT</span>
+                    <span class="skill-tag">GPT</span>
+                    <span class="skill-tag">RAG Architecture</span>
+                    <span class="skill-tag">Fine-tuning</span>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <h3>Machine Learning & Deep Learning</h3>
+                <div class="skills-tags">
+                    <span class="skill-tag">TensorFlow</span>
+                    <span class="skill-tag">PyTorch</span>
+                    <span class="skill-tag">Keras</span>
+                    <span class="skill-tag">Scikit-learn</span>
+                    <span class="skill-tag">XGBoost</span>
+                    <span class="skill-tag">LightGBM</span>
+                    <span class="skill-tag">CatBoost</span>
+                    <span class="skill-tag">Neural Networks</span>
+                    <span class="skill-tag">NLP</span>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <h3>Data Engineering & Big Data</h3>
+                <div class="skills-tags">
+                    <span class="skill-tag">Apache Spark</span>
+                    <span class="skill-tag">PySpark</span>
+                    <span class="skill-tag">Airflow</span>
+                    <span class="skill-tag">Kafka</span>
+                    <span class="skill-tag">Databricks</span>
+                    <span class="skill-tag">Snowflake</span>
+                    <span class="skill-tag">dbt</span>
+                    <span class="skill-tag">Delta Lake</span>
+                    <span class="skill-tag">ETL/ELT</span>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <h3>Vector Databases & Storage</h3>
+                <div class="skills-tags">
+                    <span class="skill-tag">Pinecone</span>
+                    <span class="skill-tag">Weaviate</span>
+                    <span class="skill-tag">FAISS</span>
+                    <span class="skill-tag">ChromaDB</span>
+                    <span class="skill-tag">PostgreSQL</span>
+                    <span class="skill-tag">MongoDB</span>
+                    <span class="skill-tag">Redis</span>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <h3>Cloud Platforms & MLOps</h3>
+                <div class="skills-tags">
+                    <span class="skill-tag">AWS (SageMaker, EC2, S3)</span>
+                    <span class="skill-tag">Azure ML</span>
+                    <span class="skill-tag">GCP (Vertex AI)</span>
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">Kubernetes</span>
+                    <span class="skill-tag">MLflow</span>
+                    <span class="skill-tag">Kubeflow</span>
+                    <span class="skill-tag">CI/CD</span>
+                    <span class="skill-tag">GitHub Actions</span>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <h3>Programming & Development</h3>
+                <div class="skills-tags">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">R</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">Scala</span>
+                    <span class="skill-tag">Pandas</span>
+                    <span class="skill-tag">NumPy</span>
+                    <span class="skill-tag">FastAPI</span>
+                    <span class="skill-tag">Git</span>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <h3>Data Visualization & BI</h3>
+                <div class="skills-tags">
+                    <span class="skill-tag">Tableau</span>
+                    <span class="skill-tag">Power BI</span>
+                    <span class="skill-tag">Looker</span>
+                    <span class="skill-tag">Matplotlib</span>
+                    <span class="skill-tag">Seaborn</span>
+                    <span class="skill-tag">Plotly</span>
+                    <span class="skill-tag">Streamlit</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <div class="section-header">
+            <div class="section-eyebrow">FEATURED PROJECTS</div>
+            <h2 class="section-title">Innovation in action.</h2>
+        </div>
+        <div class="project-showcase">
+            <div class="project-card">
+                <div>
+                    <div class="project-eyebrow">GENERATIVE AI</div>
+                    <h3 class="project-title">RAG Chatbot with FAISS</h3>
+                    <p class="project-description">Advanced Retrieval-Augmented Generation chatbot leveraging FAISS vector database for semantic search and contextual responses from large document repositories</p>
+                    <p class="project-tech">LangChain • FAISS • OpenAI • Python • Vector Embeddings</p>
+                </div>
+                <a href="https://github.com/PradeepGadanki/LLMS/tree/main/RAG%20CHATBOT%20Using%20FAISS" target="_blank" class="project-link">View on GitHub →</a>
+            </div>
+
+            <div class="project-card">
+                <div>
+                    <div class="project-eyebrow">AI AGENTS</div>
+                    <h3 class="project-title">Cafe Agent with LangGraph</h3>
+                    <p class="project-description">Intelligent conversational agent built with LangGraph for automated cafe ordering, demonstrating multi-turn dialogue management and contextual understanding</p>
+                    <p class="project-tech">LangGraph • LangChain • LLMs • Python • Conversational AI</p>
+                </div>
+                <a href="https://github.com/PradeepGadanki/LLMS/tree/main/Cafe%20agent%20with%20LangGraph" target="_blank" class="project-link">View on GitHub →</a>
+            </div>
+
+            <div class="project-card">
+                <div>
+                    <div class="project-eyebrow">HEALTHCARE AI</div>
+                    <h3 class="project-title">Blood Pressure Prediction LSTM</h3>
+                    <p class="project-description">Deep learning model using LSTM networks for time series prediction of blood pressure patterns, enabling proactive healthcare monitoring and intervention</p>
+                    <p class="project-tech">LSTM • TensorFlow • Time Series • Python • Healthcare Analytics</p>
+                </div>
+                <a href="https://github.com/PradeepGadanki/Blood-pressure-prediction-LSTM" target="_blank" class="project-link">View on GitHub →</a>
+            </div>
+
+            <div class="project-card">
+                <div>
+                    <div class="project-eyebrow">AUTONOMOUS SYSTEMS</div>
+                    <h3 class="project-title">LIO-Fusion Real-Time Odometry</h3>
+                    <p class="project-description">Real-time LiDAR-Inertial Odometry system fusing sensor data for precise localization in autonomous driving applications with robust performance</p>
+                    <p class="project-tech">LiDAR • IMU • C++ • ROS • Sensor Fusion • SLAM</p>
+                </div>
+                <a href="https://github.com/PradeepGadanki/ADAS/tree/main/LIO-Fusion%20Real-Time%20LiDAR-Inertial%20Odometry" target="_blank" class="project-link">View on GitHub →</a>
+            </div>
+
+            <div class="project-card">
+                <div>
+                    <div class="project-eyebrow">COMPUTER VISION</div>
+                    <h3 class="project-title">ADAS Simulator</h3>
+                    <p class="project-description">Advanced Driver Assistance System simulator for testing and validating autonomous driving algorithms in controlled virtual environments</p>
+                    <p class="project-tech">C++ • Computer Vision • Simulation • ADAS • Autonomous Driving</p>
+                </div>
+                <a href="https://github.com/PradeepGadanki/ADAS/tree/main/ADAS%20Simulator" target="_blank" class="project-link">View on GitHub →</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="contact-section">
+            <h2 class="contact-title">Let's create something<br>extraordinary together.</h2>
+            <p class="contact-description">Available for freelance projects and full-time opportunities</p>
+            <a href="mailto:pradeepreddygadanki@gmail.com" class="contact-button">Get in touch</a>
+            <a href="https://github.com/PradeepGadanki" target="_blank" class="contact-button">View GitHub</a>
+            <div class="contact-info">
+                <div class="contact-item">pradeepreddygadanki@gmail.com</div>
+                <div class="contact-item">United States</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="https://github.com/PradeepGadanki" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/in/pradeeepreddy" target="_blank">LinkedIn</a>
+                <a href="mailto:pradeepreddygadanki@gmail.com">Email</a>
+            </div>
+            <p class="footer-copyright">© 2025 Pradeep. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 44;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        const cards = document.querySelectorAll('.card, .project-card, .experience-item');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.background = '#2d2d2f';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.background = '#1d1d1f';
+            });
+        });
+    </script>
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pradeep Gadanki - Senior Gen AI Engineer</title>
+    <title>Pradeep Gadanki | Senior Gen AI Engineer</title>
     <style>
         * {
             margin: 0;
@@ -11,817 +11,610 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --primary: #2563eb;
+            --secondary: #7c3aed;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', sans-serif;
-            -webkit-font-smoothing: antialiased;
-            background: #000;
-            color: #f5f5f7;
-            overflow-x: hidden;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--light);
         }
 
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: saturate(180%) blur(20px);
-            z-index: 1000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        nav {
+        .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 22px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 44px;
-        }
-
-        .logo {
-            font-size: 21px;
-            font-weight: 600;
-            color: #f5f5f7;
-            letter-spacing: -0.01em;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 32px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #f5f5f7;
-            font-size: 12px;
-            font-weight: 400;
-            opacity: 0.8;
-            transition: opacity 0.3s;
-            letter-spacing: -0.01em;
-        }
-
-        .nav-links a:hover {
-            opacity: 1;
-        }
-
-        section {
-            position: relative;
-            width: 100%;
-        }
-
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: #000;
             padding: 0 20px;
         }
 
-        .hero h1 {
-            font-size: 80px;
-            font-weight: 600;
-            letter-spacing: -0.015em;
-            line-height: 1.05;
-            margin-bottom: 12px;
-            background: linear-gradient(90deg, #f5f5f7 0%, #999 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
         }
 
-        .hero p {
-            font-size: 28px;
-            font-weight: 400;
-            color: #86868b;
-            margin-bottom: 24px;
-            letter-spacing: -0.01em;
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
         }
 
-        .hero-links {
+        header .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .tagline {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+
+        .contact-links {
             display: flex;
-            gap: 24px;
-            margin-top: 16px;
-            flex-wrap: wrap;
+            gap: 20px;
             justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease 0.4s both;
         }
 
-        .hero-links a {
-            font-size: 17px;
-            color: #2997ff;
+        .contact-links a {
+            color: white;
             text-decoration: none;
+            padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            transition: all 0.3s;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-links a:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        nav {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
             transition: color 0.3s;
         }
 
-        .hero-links a:hover {
-            text-decoration: underline;
+        nav a:hover {
+            color: var(--primary);
         }
 
-        .section {
-            padding: 120px 20px;
-            max-width: 1200px;
+        section {
+            padding: 80px 0;
+        }
+
+        section:nth-child(even) {
+            background: white;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            text-align: center;
+            color: var(--dark);
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        .summary {
+            max-width: 900px;
             margin: 0 auto;
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: var(--gray);
         }
 
-        .section-header {
-            text-align: center;
-            margin-bottom: 80px;
-        }
-
-        .section-eyebrow {
-            font-size: 17px;
-            font-weight: 600;
-            color: #f56300;
-            letter-spacing: 0.01em;
-            margin-bottom: 8px;
-        }
-
-        .section-title {
-            font-size: 56px;
-            font-weight: 600;
-            letter-spacing: -0.015em;
-            line-height: 1.07;
-            color: #f5f5f7;
-        }
-
-        .section-subtitle {
-            font-size: 28px;
-            font-weight: 400;
-            color: #86868b;
-            margin-top: 16px;
-            letter-spacing: -0.01em;
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-top: 60px;
-        }
-
-        .about-text {
-            font-size: 21px;
-            line-height: 1.47;
-            color: #86868b;
-            letter-spacing: -0.01em;
-        }
-
-        .about-text p {
+        .summary p {
             margin-bottom: 20px;
         }
 
-        .stats-grid {
+        .skills-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
         }
 
-        .stat-card {
-            background: #1d1d1f;
-            border-radius: 18px;
+        .skill-category {
+            background: white;
             padding: 30px;
-            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .stat-number {
-            font-size: 48px;
-            font-weight: 600;
-            color: #f5f5f7;
-            margin-bottom: 8px;
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
 
-        .stat-label {
-            font-size: 17px;
-            color: #86868b;
+        .skill-category h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.3em;
         }
 
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 12px;
-            margin-top: 60px;
-        }
-
-        .card {
-            background: #1d1d1f;
-            border-radius: 18px;
-            padding: 50px 40px;
-            transition: transform 0.3s, background 0.3s;
-            cursor: pointer;
-        }
-
-        .card:hover {
-            transform: scale(1.02);
-            background: #2d2d2f;
-        }
-
-        .card-icon {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-
-        .card h3 {
-            font-size: 28px;
-            font-weight: 600;
-            margin-bottom: 12px;
-            letter-spacing: -0.01em;
-        }
-
-        .card p {
-            font-size: 17px;
-            color: #86868b;
-            line-height: 1.47;
-            letter-spacing: -0.01em;
+        .skill-category p {
+            color: var(--gray);
+            line-height: 1.6;
         }
 
         .experience-timeline {
-            margin-top: 60px;
-        }
-
-        .experience-item {
-            background: #1d1d1f;
-            border-radius: 18px;
-            padding: 50px 40px;
-            margin-bottom: 20px;
-            transition: transform 0.3s, background 0.3s;
-            cursor: pointer;
-        }
-
-        .experience-item:hover {
-            transform: translateX(10px);
-            background: #2d2d2f;
-        }
-
-        .experience-header {
-            margin-bottom: 24px;
-        }
-
-        .experience-title {
-            font-size: 32px;
-            font-weight: 600;
-            margin-bottom: 8px;
-            letter-spacing: -0.01em;
-        }
-
-        .experience-date {
-            font-size: 17px;
-            color: #f56300;
-            font-weight: 500;
-        }
-
-        .experience-highlights {
-            list-style: none;
-        }
-
-        .experience-highlights li {
-            font-size: 17px;
-            color: #86868b;
-            line-height: 1.6;
-            margin-bottom: 12px;
-            padding-left: 20px;
+            max-width: 900px;
+            margin: 0 auto;
             position: relative;
         }
 
-        .experience-highlights li::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: #f56300;
-            font-weight: bold;
+        .experience-item {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+            border-left: 4px solid var(--primary);
+            transition: transform 0.3s;
         }
 
-        .project-showcase {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 12px;
-            margin-top: 60px;
+        .experience-item:hover {
+            transform: translateX(5px);
         }
 
-        .project-card {
-            background: #1d1d1f;
-            border-radius: 18px;
-            padding: 60px 40px;
+        .experience-header {
             display: flex;
-            flex-direction: column;
             justify-content: space-between;
-            min-height: 400px;
-            transition: transform 0.3s, background 0.3s;
-            cursor: pointer;
-        }
-
-        .project-card:hover {
-            transform: scale(1.02);
-            background: #2d2d2f;
-        }
-
-        .project-eyebrow {
-            font-size: 12px;
-            font-weight: 600;
-            color: #f56300;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            margin-bottom: 12px;
-        }
-
-        .project-title {
-            font-size: 40px;
-            font-weight: 600;
-            letter-spacing: -0.01em;
-            margin-bottom: 16px;
-        }
-
-        .project-description {
-            font-size: 21px;
-            color: #86868b;
-            line-height: 1.38;
-            letter-spacing: -0.01em;
-            margin-bottom: 24px;
-            flex-grow: 1;
-        }
-
-        .project-tech {
-            font-size: 14px;
-            color: #86868b;
-            margin-bottom: 20px;
-        }
-
-        .project-link {
-            font-size: 17px;
-            color: #2997ff;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .project-link:hover {
-            text-decoration: underline;
-        }
-
-        .skills-section {
-            margin-top: 60px;
-        }
-
-        .skills-category {
-            background: #1d1d1f;
-            border-radius: 18px;
-            padding: 40px;
-            margin-bottom: 12px;
-        }
-
-        .skills-category h3 {
-            font-size: 24px;
-            font-weight: 600;
-            margin-bottom: 20px;
-            color: #f5f5f7;
-        }
-
-        .skills-tags {
-            display: flex;
+            align-items: start;
+            margin-bottom: 15px;
             flex-wrap: wrap;
             gap: 10px;
         }
 
-        .skill-tag {
-            background: #2d2d2f;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 14px;
-            color: #86868b;
-        }
-
-        .contact-section {
-            background: #1d1d1f;
-            border-radius: 18px;
-            padding: 80px 60px;
-            text-align: center;
-            margin: 120px 20px;
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .contact-title {
-            font-size: 56px;
+        .experience-title {
+            color: var(--dark);
+            font-size: 1.4em;
             font-weight: 600;
-            letter-spacing: -0.015em;
-            margin-bottom: 24px;
         }
 
-        .contact-description {
-            font-size: 21px;
-            color: #86868b;
-            margin-bottom: 40px;
-            letter-spacing: -0.01em;
+        .experience-date {
+            color: var(--primary);
+            font-weight: 500;
         }
 
-        .contact-button {
+        .experience-company {
+            color: var(--gray);
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+
+        .experience-highlights {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .experience-highlights li {
+            padding-left: 25px;
+            margin-bottom: 10px;
+            position: relative;
+            color: var(--gray);
+        }
+
+        .experience-highlights li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        .project-card h3 {
+            color: var(--dark);
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .project-date {
+            color: var(--primary);
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+
+        .project-description {
+            color: var(--gray);
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .project-tech {
+            color: var(--secondary);
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+
+        .project-link {
             display: inline-block;
-            background: #0071e3;
-            color: #fff;
-            font-size: 17px;
-            font-weight: 400;
-            padding: 14px 28px;
-            border-radius: 980px;
+            color: var(--primary);
             text-decoration: none;
-            transition: background 0.3s;
-            margin: 0 8px 16px;
-        }
-
-        .contact-button:hover {
-            background: #0077ed;
-        }
-
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 48px;
-            margin-top: 48px;
-            flex-wrap: wrap;
-        }
-
-        .contact-item {
-            font-size: 17px;
-            color: #86868b;
-        }
-
-        footer {
-            background: #1d1d1f;
-            padding: 60px 20px 40px;
-            margin-top: 120px;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 32px;
-            margin-bottom: 32px;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: #86868b;
-            text-decoration: none;
-            font-size: 12px;
+            font-weight: 500;
             transition: color 0.3s;
         }
 
-        .footer-links a:hover {
-            color: #f5f5f7;
+        .project-link:hover {
+            color: var(--secondary);
         }
 
-        .footer-copyright {
-            font-size: 12px;
-            color: #86868b;
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .education-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .education-card:hover {
+            transform: scale(1.05);
+        }
+
+        .education-card h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .education-card p {
+            color: var(--gray);
+            margin-bottom: 5px;
+        }
+
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 48px;
+            h1 {
+                font-size: 2em;
             }
 
-            .hero p {
-                font-size: 21px;
+            .tagline {
+                font-size: 1.2em;
             }
 
-            .section-title {
-                font-size: 40px;
+            h2 {
+                font-size: 2em;
             }
 
-            .section-subtitle {
-                font-size: 21px;
+            nav ul {
+                gap: 20px;
             }
 
-            .about-grid {
+            .skills-grid,
+            .projects-grid,
+            .education-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .project-showcase {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-title {
-                font-size: 40px;
-            }
-
-            .nav-links {
-                gap: 16px;
-                font-size: 10px;
-            }
-
-            .experience-item:hover {
-                transform: translateX(0);
-            }
-
-            .logo {
-                font-size: 16px;
-            }
-        }
-
-        .scroll-indicator {
-            position: absolute;
-            bottom: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: bounce 2s infinite;
-        }
-
-        .scroll-indicator::after {
-            content: '';
-            display: block;
-            width: 20px;
-            height: 30px;
-            border: 2px solid rgba(245, 245, 247, 0.5);
-            border-radius: 12px;
-            position: relative;
-        }
-
-        .scroll-indicator::before {
-            content: '';
-            position: absolute;
-            top: 8px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 4px;
-            height: 8px;
-            background: rgba(245, 245, 247, 0.5);
-            border-radius: 2px;
-            animation: scroll 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateX(-50%) translateY(0);
-            }
-            40% {
-                transform: translateX(-50%) translateY(-10px);
-            }
-            60% {
-                transform: translateX(-50%) translateY(-5px);
-            }
-        }
-
-        @keyframes scroll {
-            0% {
-                opacity: 0;
-                top: 8px;
-            }
-            50% {
-                opacity: 1;
-            }
-            100% {
-                opacity: 0;
-                top: 18px;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <nav>
-            <div class="logo">PRADEEP GADANKI</div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <h1>Pradeep Gadanki</h1>
+            <p class="tagline">Senior Gen AI Engineer</p>
+            <div class="contact-links">
+                <a href="mailto:pradeepgpr222@gmail.com">📧 Email</a>
+                <a href="tel:+16283060965">📞 (628) 306-0965</a>
+                <a href="https://linkedin.com/in/pradeeepreddy1" target="_blank">💼 LinkedIn</a>
+                <a href="https://github.com/PradeepGadanki" target="_blank">🔗 GitHub</a>
+            </div>
+        </div>
     </header>
 
-    <section class="hero">
-        <h1>Senior Gen AI Engineer.<br>ML Innovator.</h1>
-        <p>7+ years architecting intelligent systems with GenAI, LLMs & RAG pipelines</p>
-        <div class="hero-links">
-            <a href="#skills">View skills →</a>
-            <a href="#projects">See projects →</a>
-            <a href="https://github.com/PradeepGadanki" target="_blank">GitHub →</a>
-        </div>
-        <div class="scroll-indicator"></div>
-    </section>
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
+        </ul>
+    </nav>
 
-    <section id="about" class="section">
-        <div class="section-header">
-            <div class="section-eyebrow">ABOUT</div>
-            <h2 class="section-title">Building autonomous AI<br>systems at scale.</h2>
-            <p class="section-subtitle">Specializing in GenAI, RAG pipelines, and agentic workflows</p>
-        </div>
-        <div class="about-grid">
-            <div class="about-text">
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="summary">
                 <p>Accomplished Senior Gen AI Engineer with over 7+ years of progressive experience architecting intelligent systems, with focus on Gen AI frameworks combining LLMs, RAG pipelines, and modular toolchains for autonomous decision-making, advanced machine learning and NLP solutions across various domains.</p>
-                <p>Built and orchestrated retrieval-augmented generation (RAG) pipelines with custom routing logic for agentic workflows, enabling multi-modal inputs and iterative refinement loops via LangChain, LangGraph, LlamaIndex, and Azure ML, implementing advanced techniques like HyDE, query decomposition, and adaptive retrieval.</p>
+                
+                <p>Specialized in developing domain-specific LLM agents capable of chaining reasoning steps across APIs, vector databases (FAISS, Pinecone, Weaviate, Qdrant), and SQL systems, enabling autonomous document summarization, data extraction, and task automation with multi-agent orchestration patterns.</p>
+                
+                <p>Expert in building and orchestrating retrieval-augmented generation (RAG) pipelines with custom routing logic for agentic workflows, enabling multi-modal inputs and iterative refinement loops via LangChain, LangGraph, LlamaIndex, and Azure ML.</p>
             </div>
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-number">7+</div>
-                    <div class="stat-label">Years Experience</div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>🤖 LLM & Agentic AI</h3>
+                    <p>LangChain, LangGraph, LlamaIndex, Hugging Face Transformers, LLaMA, Falcon, Mistral, OpenAI, Vector Databases (Pinecone, Weaviate, ChromaDB, FAISS, Qdrant), Semantic Caching, Prompt Engineering</p>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number">50+</div>
-                    <div class="stat-label">ML Projects</div>
+                <div class="skill-category">
+                    <h3>🧠 Machine Learning</h3>
+                    <p>Supervised Learning, Deep Learning, Neural Networks, NLP, Computer Vision, Reinforcement Learning, MLOps, AutoML, Feature Engineering, Model Selection, Hyperparameter Tuning</p>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number">4</div>
-                    <div class="stat-label">Industries</div>
+                <div class="skill-category">
+                    <h3>🔧 Deep Learning Frameworks</h3>
+                    <p>TensorFlow, PyTorch, Keras, Scikit-learn, XGBoost, LightGBM, CatBoost, Hugging Face Transformers</p>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label">Production Ready</div>
+                <div class="skill-category">
+                    <h3>☁️ Cloud Platforms</h3>
+                    <p>AWS (SageMaker, EC2, S3, Lambda, Redshift), Microsoft Azure (Machine Learning Studio, Data Factory), Azure Databricks, AKS</p>
+                </div>
+                <div class="skill-category">
+                    <h3>📊 Data Engineering</h3>
+                    <p>Apache Spark, Hadoop, Kafka, Airflow, ETL/ELT, Data Pipelines, Apache Beam, Databricks, Snowflake, dbt, Delta Lake, Feast</p>
+                </div>
+                <div class="skill-category">
+                    <h3>🚀 DevOps & MLOps</h3>
+                    <p>Docker, Kubernetes, Git, CI/CD, Jenkins, MLflow, Kubeflow, DVC, Model Deployment, GitHub Actions, Azure DevOps</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section">
-        <div class="section-header">
-            <div class="section-eyebrow">EXPERTISE</div>
-            <h2 class="section-title">Core capabilities.</h2>
-        </div>
-        <div class="cards-grid">
-            <div class="card">
-                <div class="card-icon">🤖</div>
-                <h3>Agentic AI & RAG</h3>
-                <p>Developing domain-specific LLM agents with multi-agent orchestration, memory-augmented systems, and advanced RAG pipelines using LangChain, LangGraph, and LlamaIndex</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">🧠</div>
-                <h3>LLM Fine-Tuning</h3>
-                <p>Automated fine-tuning of LLMs using LoRA, QLoRA, and PEFT techniques with structured prompts, integrating open-source models (LLaMA, Falcon, Mistral, Phi-3)</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">📊</div>
-                <h3>MLOps & Deployment</h3>
-                <p>End-to-end ML lifecycle management with MLflow, feature stores (Delta Lake, Feast), and containerized deployments on Kubernetes with CI/CD automation</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">☁️</div>
-                <h3>Vector Databases</h3>
-                <p>Architecting retrieval systems with FAISS, Pinecone, Weaviate, ChromaDB, and Milvus for semantic search and long-term context tracking in AI applications</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="experience" class="section">
-        <div class="section-header">
-            <div class="section-eyebrow">PROFESSIONAL EXPERIENCE</div>
-            <h2 class="section-title">Career journey.</h2>
-        </div>
-        <div class="experience-timeline">
-            <div class="experience-item">
-                <div class="experience-header">
-                    <h3 class="experience-title">Graduate Research Assistant | University of Dayton</h3>
-                    <p class="experience-date">January 2024 - May 2025</p>
+    <section id="experience">
+        <div class="container">
+            <h2>Professional Experience</h2>
+            <div class="experience-timeline">
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title">Graduate Research Assistant</div>
+                            <div class="experience-company">University of Dayton</div>
+                        </div>
+                        <div class="experience-date">January 2024 - May 2025</div>
+                    </div>
+                    <ul class="experience-highlights">
+                        <li>Architected production-ready multi-modal RAG pipelines processing large-scale medical documents and images, integrating LangChain, LangGraph, LlamaIndex, and GPT-4 Vision/Turbo for clinical decision support systems</li>
+                        <li>Engineered hybrid retrieval combining dense embeddings, sparse retrieval (BM25, ColBERT v2), and graph-based retrieval (Neo4j) with reciprocal rank fusion</li>
+                        <li>Implemented vision-language models using CLIP, BiomedCLIP, GPT-4 Vision, and LLaVA-Med for processing medical images alongside textual context</li>
+                        <li>Developed semantic caching with Redis and ChromaDB reducing inference costs by 60% and latency by 45%</li>
+                        <li>Built comprehensive evaluation framework using RAGAS metrics with expert physician feedback loops</li>
+                    </ul>
                 </div>
-                <ul class="experience-highlights">
-                    <li>Architected production-ready multi-modal RAG pipelines processing large-scale medical documents and images, integrating LangChain, LangGraph, LlamaIndex, and GPT-4 Vision/Turbo for clinical decision support systems</li>
-                    <li>Engineered hybrid retrieval combining dense embeddings (sentence-transformers, CLIP, BioMedCLIP), sparse retrieval (BM25, ColBERT v2), and graph-based retrieval (Neo4j) with reciprocal rank fusion</li>
-                    <li>Implemented vision-language models using CLIP, BiomedCLIP, GPT-4 Vision, and LLaVA-Med for processing medical images (X-rays, MRIs, CT scans) enabling multi-modal diagnostic reasoning workflows</li>
-                    <li>Developed semantic caching with Redis and ChromaDB reducing inference costs by 60% and latency by 45% while maintaining 98% accuracy</li>
-                    <li>Built comprehensive evaluation framework using RAGAS metrics (faithfulness, context precision, answer relevance) and TruLens for end-to-end RAG pipeline monitoring</li>
-                </ul>
-            </div>
 
-            <div class="experience-item">
-                <div class="experience-header">
-                    <h3 class="experience-title">Machine Learning Engineer | Tata Elxsi</h3>
-                    <p class="experience-date">July 2020 - August 2023</p>
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title">Machine Learning Engineer</div>
+                            <div class="experience-company">Tata Elxsi</div>
+                        </div>
+                        <div class="experience-date">July 2020 – August 2023</div>
+                    </div>
+                    <ul class="experience-highlights">
+                        <li>Led end-to-end design and deployment of production-scale visual search and recommendation system processing 200M+ images daily using PyTorch, Hugging Face Transformers, and vision foundation models</li>
+                        <li>Architected representation learning pipeline using contrastive training (SimCLR, MoCo) with self-supervised learning achieving high retrieval precision</li>
+                        <li>Designed feature infrastructure with Delta Lake on Azure Databricks and Pinecone with HNSW indexing, managing 500-dimensional embeddings with sub-50ms p95 retrieval latency</li>
+                        <li>Built hybrid ranking system combining dense embeddings with sparse retrieval and business logic re-ranking using reciprocal rank fusion</li>
+                        <li>Implemented approximate nearest neighbor search using Faiss enabling billion-scale similarity search with sub-100ms latency</li>
+                    </ul>
                 </div>
-                <ul class="experience-highlights">
-                    <li>Led end-to-end design and deployment of production-scale visual search and recommendation system processing 200M+ images daily using PyTorch 2.0, Hugging Face Transformers (ViT, CLIP, ConvNeXt)</li>
-                    <li>Architected representation learning pipeline using contrastive training (SimCLR, MoCo frameworks) achieving high retrieval precision for visually similar products</li>
-                    <li>Designed feature infrastructure with Delta Lake on Azure Databricks and Pinecone with HNSW indexing, managing 500-dimensional embeddings with sub-50ms p95 retrieval latency</li>
-                    <li>Built hybrid ranking system combining dense embeddings (CLIP, ResNet-50) with sparse retrieval (BM25) and business logic re-ranking using reciprocal rank fusion</li>
-                    <li>Implemented approximate nearest neighbor search using Faiss with IVF-PQ indexing reducing memory footprint while maintaining high recall for billion-scale similarity search</li>
-                    <li>Containerized vision models using Docker 23.x with Kubernetes 1.27 orchestration achieving high availability for inference APIs handling 100K+ requests per minute</li>
-                </ul>
-            </div>
 
-            <div class="experience-item">
-                <div class="experience-header">
-                    <h3 class="experience-title">Machine Learning Engineer | Cognizant</h3>
-                    <p class="experience-date">August 2018 - July 2020</p>
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title">Machine Learning Engineer</div>
+                            <div class="experience-company">Cognizant</div>
+                        </div>
+                        <div class="experience-date">August 2018 – July 2020</div>
+                    </div>
+                    <ul class="experience-highlights">
+                        <li>Developed customer sentiment analysis system using PyTorch, TensorFlow, and Hugging Face Transformers (BERT, RoBERTa) processing unstructured feedback from multiple sources</li>
+                        <li>Designed feature infrastructure with Delta Lake, Pinecone vector databases, and Feast ensuring consistent feature versioning</li>
+                        <li>Pioneered early-stage generative AI workflows combining LangChain with Hugging Face models for automated response generation</li>
+                        <li>Developed multi-lingual sentiment analysis supporting 10+ languages using multilingual transformers</li>
+                        <li>Built interactive dashboards using Amazon QuickSight and Tableau integrating ML predictions with business metrics</li>
+                    </ul>
                 </div>
-                <ul class="experience-highlights">
-                    <li>Developed customer sentiment analysis system using PyTorch, TensorFlow, and Hugging Face Transformers (BERT, RoBERTa, DistilBERT) processing unstructured feedback from multiple channels</li>
-                    <li>Designed feature infrastructure with Delta Lake on Amazon EMR, Pinecone vector databases, and Feast on Amazon EKS ensuring consistent feature versioning with sub-10ms retrieval latency</li>
-                    <li>Automated ML workflows with Amazon SageMaker Pipelines, EMR Runtime, and Apache Airflow integrating data preparation, distributed training, and deployment stages</li>
-                    <li>Pioneered early-stage generative AI workflows combining LangChain with Hugging Face GPT-2 and BERT models for automated response generation enhancing customer service automation</li>
-                    <li>Containerized models using Docker and orchestrated with Amazon EKS deploying microservices for scalable inference APIs handling 10K+ requests per minute</li>
-                    <li>Developed multi-lingual sentiment analysis supporting 10+ languages using multilingual transformers (mBERT, XLM-RoBERTa) expanding insights coverage to international markets</li>
-                </ul>
             </div>
         </div>
     </section>
 
-    <section id="skills" class="section">
-        <div class="section-header">
-            <div class="section-eyebrow">TECHNICAL SKILLS</div>
-            <h2 class="section-title">Technologies & tools.</h2>
+    <section id="projects">
+        <div class="container">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Cafe Agent with LangGraph</h3>
+                    <p class="project-date">May 2025</p>
+                    <p class="project-description">Developed an intelligent cafe ordering agent using LangGraph and large language models to process natural language inputs and automate order workflows with robust conversational capabilities.</p>
+                    <p class="project-tech"><strong>Tech:</strong> Python, LangGraph, LLMs, NLP</p>
+                    <a href="https://github.com/PradeepGadanki/LLMS/tree/main/Cafe agent with LangGraph" target="_blank" class="project-link">View on GitHub →</a>
+                </div>
+
+                <div class="project-card">
+                    <h3>Blood Pressure Prediction - LSTM + GenAI</h3>
+                    <p class="project-date">February 2025</p>
+                    <p class="project-description">Hybrid AI system combining LSTM models for time-series BP prediction with Generative AI and RAG pipelines for transparent clinical decision support. Integrated SHAP and attention layers for explainability.</p>
+                    <p class="project-tech"><strong>Tech:</strong> TensorFlow, Keras, SHAP, GPT-4, LangChain, FAISS, FastAPI, Docker</p>
+                    <a href="https://github.com/PradeepGadanki/Blood-pressure-predicJon-LSTM/tree/main/Blood pressure predicJon LSTM" target="_blank" class="project-link">View on GitHub →</a>
+                </div>
+
+                <div class="project-card">
+                    <h3>LIO-Fusion - Real-Time SLAM System</h3>
+                    <p class="project-date">August 2024</p>
+                    <p class="project-description">Developed real-time SLAM system using LIO-Fusion to fuse 3D LiDAR point clouds with high-frequency IMU data for robust odometry in dynamic environments. Configured extrinsics and debugged transformations using custom ROS visualizations.</p>
+                    <p class="project-tech"><strong>Tech:</strong> ROS, C++, PCL, IMU, LiDAR, YAML</p>
+                    <a href="https://github.com/PradeepGadanki/ADAS/tree/main/LIO-Fusion" target="_blank" class="project-link">View on GitHub →</a>
+                </div>
+            </div>
         </div>
-        <div class="skills-section">
-            <div class="skills-category">
-                <h3>LLM & Agentic Frameworks</h3>
-                <div class="skills-tags">
-                    <span class="skill-tag">LangChain</span>
-                    <span class="skill-tag">LangChain Expression Language (LCEL)</span>
-                    <span class="skill-tag">LangGraph</span>
-                    <span class="skill-tag">LlamaIndex</span>
-                    <span class="skill-tag">Hugging Face Transformers</span>
-                    <span class="skill-tag">LLaMA 2/3</span>
-                    <span class="skill-tag">Falcon</span>
-                    <span class="skill-tag">Mistral</span>
-                    <span class="skill-tag">Mixtral</span>
-                    <span class="skill-tag">Phi-3</span>
-                    <span class="skill-tag">Qwen</span>
-                    <span class="skill-tag">OpenAI</span>
-                    <span class="skill-tag">Prompt Engineering</span>
-                    <span class="skill-tag">Function Calling</span>
-                    <span class="skill-tag">LoRA</span>
-                    <span class="skill-tag">QLoRA</span>
-                    <span class="skill-tag">PEFT</span>
+    </section>
+
+    <section id="education">
+        <div class="container">
+            <h2>Education</h2>
+            <div class="education-grid">
+                <div class="education-card">
+                    <h3>Master of Science</h3>
+                    <p><strong>Computer Science</strong></p>
+                    <p>University of Dayton</p>
+                    <p>2025</p>
+                </div>
+
+                <div class="education-card">
+                    <h3>Master of Technology</h3>
+                    <p><strong>Robotics</strong></p>
+                    <p>SRM Institute of Science and Technology</p>
+                    <p>2022</p>
+                </div>
+
+                <div class="education-card">
+                    <h3>Bachelor of Technology</h3>
+                    <p><strong>Electronics and Communication Engineering</strong></p>
+                    <p>Sri Venkateswara College of Engineering and Technology</p>
+                    <p>2018</p>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="skills-category">
-                <h3>Machine Learning & Deep Learning</h3>
-                <div class="skills-tags">
-                    <span class="skill-tag">TensorFlow</span>
-                    <span class="skill-tag">PyTorch</span>
-                    <span class="skill-tag">Keras</span>
-                    <span class="skill-tag">Scikit-learn</span>
-                    <span class="skill-tag">XGBoost</span>
-                    <span class="skill-tag">LightGBM</span>
-                    <span class="skill-tag">CatBoost</span>
-                    <span class="skill-tag">Neural Networks</span>
-                    <span class="skill-tag">NLP</span>
-                    <span class="skill-tag">Computer Vision</span>
-                    <span class="skill-tag">Reinforcement Learning</span>
-                    <span class="skill-tag">AutoML</span>
-                </div>
-            </div>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Pradeep Gadanki. All rights reserved.</p>
+            <p>Senior Gen AI Engineer | Machine Learning | Deep Learning | NLP</p>
+        </div>
+    </footer>
 
-            <div class="skills-category">
-                <h3>Data Engineering & Big Data</h3>
-                <div class="skills-tags">
-                    <span class="skill-tag">Apache Spark</span>
-                    <span class="skill-tag">Hadoop</span>
-                    <span class="skill-tag">Kafka</span>
-                    <span class="skill-tag">Airflow</span>
-                    <span class="skill-tag">ETL/ELT</span>
-                    <span class="skill-tag">Apache Beam</span>
-                    <span class="skill-tag">Databricks</span>
-                    <span class="skill-tag">Snowflake</span>
-                    <span class="skill-tag">dbt</span>
-                    <span class="skill-tag">Delta Lake</span>
-                    <span class="skill-tag">Feast</span>
-                </div>
-            </div>
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
 
-            <div class="skills-category">
-                <h3>Vector Databases & Embeddings</h3>
-                <div class="skills-tags">
-                    <span class="skill-tag">Pinecone</span>
-                    <span class="skill-tag">Weaviate</span>
-                    <span class="skill-tag">FAISS</span>
-                    <span class="skill-tag">ChromaDB</span>
-                    <span class="skill-tag">Qdrant</span>
-                    <span class="skill-tag">Milvus</span>
-                    <span class="skill-tag">Semantic Caching</span>
-                    <span class="skill-tag">HNSW Indexing</span>
-                    <span class="skill-tag">PostgreSQL (pgvector)</span>
-                    <span class="skill-tag">Redis</span>
-                    <span class="skill-tag">Neo4j</span>
-                </div>
-            </div>
+        // Add scroll animation for sections
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
 
-            <div class="skills-category">
-                <h3>Cloud Platforms & MLOps</h3>
-                <div class="skills-tags">
-                    <span class="skill-tag">AWS SageMaker</span>
-                    <span class="skill-tag">AWS EC2</span>
-                    <span class="skill-tag">AWS S3</span>
-                    <span class="skill-tag">AWS Lambda</span>
-                    <span class="skill-tag">AWS Redshift</span>
-                    <span class="skill-tag">Azure ML</span>
-                    <span class="skill-tag">Azure Data Factory</span>
-                    <span class="skill-tag">Azure Databricks</span>
-                    <span class="skill-tag">GCP</span>
-                    <span class="skill-tag">Docker</span>
-                    <span class="skill-tag">Kubernetes</span>
-                    <span class="skill-tag">Helm</span>
-                    <span class="skill-tag">MLflow</span>
-                    <span class="skill-tag">Kubeflow</span>
-                    <span class="skill-tag">DVC</span>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.skill-category, .experience-item, .project-card, .education-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

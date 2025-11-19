@@ -16,6 +16,7 @@
             color: #1d1d1f;
             background-color: #f5f5f7;
             overflow-x: hidden;
+            scroll-behavior: smooth;
         }
         .container {
             max-width: 1200px;
@@ -24,111 +25,164 @@
         }
         header {
             text-align: center;
-            padding: 100px 0 60px;
-            background-color: #fff;
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, #fff 0%, #f5f5f7 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(0,0,0,0.03)"/><circle cx="75" cy="75" r="1" fill="rgba(0,0,0,0.03)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>') repeat;
+            opacity: 0.5;
+        }
+        header > * {
+            position: relative;
+            z-index: 1;
         }
         h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             font-weight: 600;
             letter-spacing: -0.02em;
             margin-bottom: 0.5rem;
             color: #1d1d1f;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out forwards;
         }
         .subtitle {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             color: #86868b;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
             font-weight: 400;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.2s forwards;
         }
         .contact-links {
             display: flex;
             justify-content: center;
-            gap: 2rem;
+            gap: 2.5rem;
             margin-top: 2rem;
             flex-wrap: wrap;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.4s forwards;
         }
         .contact-links a {
             color: #0071e3;
             text-decoration: none;
             font-weight: 500;
-            font-size: 1rem;
-            transition: color 0.2s ease;
+            font-size: 1.1rem;
+            transition: color 0.2s ease, transform 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
         .contact-links a:hover {
             color: #005bb5;
+            transform: translateY(-1px);
         }
         section {
-            padding: 80px 0;
+            padding: 100px 0;
             background-color: #fff;
         }
         section:nth-child(even) {
             background-color: #f5f5f7;
         }
         h2 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             font-weight: 600;
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 3.5rem;
             letter-spacing: -0.02em;
             color: #1d1d1f;
+            position: relative;
+        }
+        h2::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 3px;
+            background: linear-gradient(135deg, #0071e3, #005bb5);
+            margin: 1rem auto 0;
+            border-radius: 2px;
         }
         .summary {
-            font-size: 1.1rem;
-            line-height: 1.6;
+            font-size: 1.15rem;
+            line-height: 1.7;
             color: #515154;
             max-width: 800px;
             margin: 0 auto;
             text-align: center;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out forwards;
         }
         .highlight {
             background: linear-gradient(135deg, #0071e3 0%, #005bb5 100%);
             color: #fff;
-            padding: 4rem 2rem;
-            border-radius: 18px;
-            margin: 0 auto 3rem;
-            max-width: 800px;
+            padding: 4rem 2.5rem;
+            border-radius: 24px;
+            margin: 0 auto 4rem;
+            max-width: 900px;
             text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 113, 227, 0.2);
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.2s forwards;
         }
         .highlight h3 {
-            font-size: 1.8rem;
+            font-size: 2rem;
             margin-bottom: 1rem;
             font-weight: 600;
         }
         .highlight p {
-            font-size: 1.1rem;
-            opacity: 0.9;
+            font-size: 1.2rem;
+            opacity: 0.95;
         }
         .experience-item, .education-item {
-            max-width: 800px;
-            margin: 0 auto 4rem;
-            padding: 2rem;
+            max-width: 900px;
+            margin: 0 auto 4.5rem;
+            padding: 2.5rem;
             background: #fff;
-            border-radius: 18px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border-radius: 24px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
         }
         .experience-item:hover, .education-item:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transform: translateY(-4px);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+        }
+        .experience-item:nth-child(even), .education-item:nth-child(even) {
+            animation-delay: 0.2s;
         }
         .experience-item:last-child, .education-item:last-child {
             margin-bottom: 0;
         }
         .job-title {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             color: #1d1d1f;
             font-weight: 600;
             margin-bottom: 0.5rem;
         }
         .company {
-            color: #0071e3;
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             font-weight: 500;
             margin-bottom: 0.5rem;
         }
+        .company a {
+            color: #0071e3;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        .company a:hover {
+            color: #005bb5;
+        }
         .duration {
             color: #86868b;
-            font-size: 1rem;
+            font-size: 1.1rem;
             margin-bottom: 1.5rem;
             font-weight: 400;
         }
@@ -137,9 +191,9 @@
             margin-top: 1rem;
         }
         .experience-item li, .education-item li {
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
             color: #515154;
-            font-size: 1rem;
+            font-size: 1.05rem;
             position: relative;
             padding-left: 1.5rem;
         }
@@ -149,97 +203,152 @@
             left: 0;
             color: #0071e3;
             font-weight: bold;
+            font-size: 1.2rem;
         }
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            max-width: 1000px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            max-width: 1100px;
             margin: 0 auto;
         }
         .skill-category {
             background: #fff;
-            padding: 2rem;
-            border-radius: 18px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            padding: 2.5rem;
+            border-radius: 24px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
             text-align: center;
-            transition: transform 0.2s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
         }
         .skill-category:hover {
-            transform: translateY(-2px);
+            transform: translateY(-4px);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+        }
+        .skill-category:nth-child(odd) {
+            animation-delay: 0.1s;
+        }
+        .skill-category:nth-child(even) {
+            animation-delay: 0.2s;
         }
         .skill-category h3 {
             color: #1d1d1f;
-            margin-bottom: 1.5rem;
-            font-size: 1.3rem;
+            margin-bottom: 1.8rem;
+            font-size: 1.4rem;
             font-weight: 600;
         }
         .skill-tags {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 0.75rem;
+            gap: 0.8rem;
         }
         .skill-tag {
             background: #f5f5f7;
-            padding: 0.5rem 1rem;
+            padding: 0.6rem 1.2rem;
             border-radius: 20px;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: #515154;
             font-weight: 500;
+            transition: background-color 0.2s ease;
+        }
+        .skill-tag:hover {
+            background: #e5e5ea;
         }
         .cta-section {
             text-align: center;
-            padding: 80px 0;
+            padding: 120px 0;
             background: linear-gradient(135deg, #0071e3 0%, #005bb5 100%);
             color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.05)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>') repeat;
+        }
+        .cta-section > * {
+            position: relative;
+            z-index: 1;
         }
         .cta-section h2 {
             color: #fff;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 2.8rem;
         }
         .cta-section p {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
         .cta-button {
             display: inline-block;
             background: #fff;
             color: #0071e3;
-            padding: 1rem 2.5rem;
-            border-radius: 28px;
+            padding: 1.2rem 3rem;
+            border-radius: 32px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1.1rem;
-            transition: background-color 0.2s ease, color 0.2s ease;
+            font-size: 1.15rem;
+            transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
         }
         .cta-button:hover {
             background: #f5f5f7;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
         }
         footer {
             background: #f5f5f7;
-            padding: 40px 0;
+            padding: 50px 0;
             text-align: center;
             color: #86868b;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         @media (max-width: 768px) {
             h1 {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
+            }
+            .subtitle {
+                font-size: 1.3rem;
             }
             h2 {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
             .contact-links {
-                gap: 1rem;
+                gap: 1.5rem;
+                flex-direction: column;
+                align-items: center;
             }
             .skills-grid {
                 grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
             .experience-item, .education-item {
-                margin: 0 0 2rem;
-                padding: 1.5rem;
+                margin: 0 0 3rem;
+                padding: 2rem;
+            }
+            .highlight, .cta-section {
+                padding: 3rem 1.5rem;
             }
         }
     </style>
@@ -248,7 +357,7 @@
     <div class="container">
         <header>
             <h1>Pradeep Gadanki</h1>
-            <p class="subtitle">Data Scientist | Gen AI Engineer | ML Architect</p>
+            <p class="subtitle">Data Scientist | Gen AI Engineer | Senior ML Engineer</p>
             <div class="contact-links">
                 <a href="mailto:gadankipradeepreddy2345@gmail.com">📧 Email</a>
                 <a href="https://www.linkedin.com/in/pradeepreddygadanki" target="_blank">💼 LinkedIn</a>
@@ -271,7 +380,7 @@
             <h2>Featured Projects & Experience</h2>
            
             <div class="experience-item">
-                <div class="company">Cognizant</div>
+                <div class="company"><a href="https://www.cognizant.com/us/en" target="_blank">Cognizant</a></div>
                 <div class="job-title">Senior Data Scientist - Gen AI</div>
                 <div class="duration">Nov 2024 - Oct 2025</div>
                 <ul>
@@ -291,7 +400,7 @@
                 </ul>
             </div>
             <div class="experience-item">
-                <div class="company">Tata Elxsi</div>
+                <div class="company"><a href="https://www.tataelxsi.com/" target="_blank">Tata Elxsi</a></div>
                 <div class="job-title">Senior Machine Learning Engineer</div>
                 <div class="duration">Apr 2021 - Aug 2023</div>
                 <ul>
@@ -302,7 +411,7 @@
                 </ul>
             </div>
             <div class="experience-item">
-                <div class="company">Tata Elxsi</div>
+                <div class="company"><a href="https://www.tataelxsi.com/" target="_blank">Tata Elxsi</a></div>
                 <div class="job-title">Machine Learning Engineer</div>
                 <div class="duration">Jul 2018 - Mar 2021</div>
                 <ul>
@@ -438,7 +547,7 @@
         <section class="cta-section">
             <div class="container">
                 <h2>Let's Connect</h2>
-                <p>I'm open to new opportunities in Data Science, Gen AI, and Machine Learning Engineering roles.</p>
+                <p>I'm open to new opportunities in Data Science, Gen AI, and Senior Machine Learning Engineering roles.</p>
                 <a href="mailto:gadankipradeepreddy2345@gmail.com" class="cta-button">Get In Touch</a>
             </div>
         </section>

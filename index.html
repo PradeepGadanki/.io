@@ -10,208 +10,236 @@
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.4;
+            color: #1d1d1f;
+            background-color: #f5f5f7;
+            overflow-x: hidden;
         }
-
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 0 20px;
         }
-
         header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 2rem;
-            border-radius: 20px;
-            margin-bottom: 2rem;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
             text-align: center;
+            padding: 100px 0 60px;
+            background-color: #fff;
         }
-
         h1 {
-            color: #667eea;
-            font-size: 2.5rem;
+            font-size: 3rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
             margin-bottom: 0.5rem;
+            color: #1d1d1f;
         }
-
         .subtitle {
-            color: #666;
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            color: #86868b;
+            margin-bottom: 2rem;
+            font-weight: 400;
         }
-
         .contact-links {
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
-            margin-top: 1rem;
+            gap: 2rem;
+            margin-top: 2rem;
             flex-wrap: wrap;
         }
-
         .contact-links a {
-            color: #667eea;
+            color: #0071e3;
             text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: color 0.2s ease;
         }
-
         .contact-links a:hover {
-            color: #764ba2;
+            color: #005bb5;
         }
-
         section {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            margin-bottom: 2rem;
-            padding: 2rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            padding: 80px 0;
+            background-color: #fff;
         }
-
+        section:nth-child(even) {
+            background-color: #f5f5f7;
+        }
         h2 {
-            color: #667eea;
-            margin-bottom: 1.5rem;
-            font-size: 2rem;
-            border-bottom: 3px solid #667eea;
-            padding-bottom: 0.5rem;
+            font-size: 2.5rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 3rem;
+            letter-spacing: -0.02em;
+            color: #1d1d1f;
         }
-
         .summary {
             font-size: 1.1rem;
-            line-height: 1.8;
-            color: #555;
+            line-height: 1.6;
+            color: #515154;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
         }
-
-        .experience-item, .education-item {
-            margin-bottom: 2rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid #eee;
+        .highlight {
+            background: linear-gradient(135deg, #0071e3 0%, #005bb5 100%);
+            color: #fff;
+            padding: 4rem 2rem;
+            border-radius: 18px;
+            margin: 0 auto 3rem;
+            max-width: 800px;
+            text-align: center;
         }
-
-        .experience-item:last-child, .education-item:last-child {
-            border-bottom: none;
-        }
-
-        .job-title {
-            font-size: 1.4rem;
-            color: #333;
-            font-weight: 700;
-        }
-
-        .company {
-            color: #667eea;
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 0.3rem;
-        }
-
-        .duration {
-            color: #888;
-            font-style: italic;
+        .highlight h3 {
+            font-size: 1.8rem;
             margin-bottom: 1rem;
+            font-weight: 600;
         }
-
-        .experience-item ul, .education-item ul {
-            margin-left: 1.5rem;
-            margin-top: 0.5rem;
+        .highlight p {
+            font-size: 1.1rem;
+            opacity: 0.9;
         }
-
-        .experience-item li {
+        .experience-item, .education-item {
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .experience-item:hover, .education-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        .experience-item:last-child, .education-item:last-child {
+            margin-bottom: 0;
+        }
+        .job-title {
+            font-size: 1.5rem;
+            color: #1d1d1f;
+            font-weight: 600;
             margin-bottom: 0.5rem;
-            color: #555;
         }
-
+        .company {
+            color: #0071e3;
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        .duration {
+            color: #86868b;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+        .experience-item ul, .education-item ul {
+            margin-left: 1rem;
+            margin-top: 1rem;
+        }
+        .experience-item li, .education-item li {
+            margin-bottom: 1rem;
+            color: #515154;
+            font-size: 1rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .experience-item li::before, .education-item li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #0071e3;
+            font-weight: bold;
+        }
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
         }
-
         .skill-category {
-            background: linear-gradient(135deg, #667eea15, #764ba215);
-            padding: 1.5rem;
-            border-radius: 15px;
-            border-left: 4px solid #667eea;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 18px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.2s ease;
         }
-
+        .skill-category:hover {
+            transform: translateY(-2px);
+        }
         .skill-category h3 {
-            color: #667eea;
-            margin-bottom: 0.8rem;
-            font-size: 1.2rem;
+            color: #1d1d1f;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            font-weight: 600;
         }
-
         .skill-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
+            justify-content: center;
+            gap: 0.75rem;
         }
-
         .skill-tag {
-            background: white;
-            padding: 0.4rem 0.8rem;
+            background: #f5f5f7;
+            padding: 0.5rem 1rem;
             border-radius: 20px;
             font-size: 0.9rem;
-            color: #555;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            color: #515154;
+            font-weight: 500;
         }
-
-        .highlight {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 1.5rem;
-            border-radius: 15px;
-            margin-bottom: 1.5rem;
+        .cta-section {
             text-align: center;
+            padding: 80px 0;
+            background: linear-gradient(135deg, #0071e3 0%, #005bb5 100%);
+            color: #fff;
         }
-
-        .highlight h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
+        .cta-section h2 {
+            color: #fff;
+            margin-bottom: 1rem;
         }
-
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
         .cta-button {
             display: inline-block;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 50px;
+            background: #fff;
+            color: #0071e3;
+            padding: 1rem 2.5rem;
+            border-radius: 28px;
             text-decoration: none;
             font-weight: 600;
-            margin-top: 1rem;
-            transition: transform 0.3s, box-shadow 0.3s;
+            font-size: 1.1rem;
+            transition: background-color 0.2s ease, color 0.2s ease;
         }
-
         .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+            background: #f5f5f7;
         }
-
         footer {
+            background: #f5f5f7;
+            padding: 40px 0;
             text-align: center;
-            padding: 2rem;
-            color: white;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
+            color: #86868b;
+            font-size: 0.9rem;
         }
-
         @media (max-width: 768px) {
             h1 {
+                font-size: 2.5rem;
+            }
+            h2 {
                 font-size: 2rem;
             }
-
-            .subtitle {
-                font-size: 1.1rem;
+            .contact-links {
+                gap: 1rem;
             }
-
             .skills-grid {
                 grid-template-columns: 1fr;
+            }
+            .experience-item, .education-item {
+                margin: 0 0 2rem;
+                padding: 1.5rem;
             }
         }
     </style>
@@ -228,22 +256,20 @@
                 <a href="tel:+14424458260">📱 (442) 445-8260</a>
             </div>
         </header>
-
         <section>
             <div class="highlight">
                 <h3>🚀 7+ Years Building Production-Scale AI Systems</h3>
                 <p>Specialized in LLMs, RAG Pipelines, MLOps & Enterprise AI Architecture</p>
             </div>
-            
+           
             <h2>About Me</h2>
             <p class="summary">
                 Accomplished Data Scientist with 7+ years of experience designing and deploying production-scale ML, NLP, and Generative AI systems (LLMs, RAG pipelines) across cloud environments. Expert in building enterprise-grade AI architectures that automate customer service, content generation, and decision intelligence workflows. Proven track record leading the full ML lifecycle from data engineering and feature store design to scalable deployment and cross-functional delivery that drives measurable business impact.
             </p>
         </section>
-
         <section>
             <h2>Featured Projects & Experience</h2>
-            
+           
             <div class="experience-item">
                 <div class="company">Cognizant</div>
                 <div class="job-title">Senior Data Scientist - Gen AI</div>
@@ -255,7 +281,6 @@
                     <li><strong>Production Deployment:</strong> Containerized models with Docker and Kubernetes for scalable, fault-tolerant inference APIs secured with OAuth2 authentication</li>
                 </ul>
             </div>
-
             <div class="experience-item">
                 <div class="company">University of Dayton</div>
                 <div class="job-title">Graduate Research Assistant</div>
@@ -265,7 +290,6 @@
                     <li>Collaborated with PhD research scientists at Premier Health integrating real-world clinical data</li>
                 </ul>
             </div>
-
             <div class="experience-item">
                 <div class="company">Tata Elxsi</div>
                 <div class="job-title">Senior Machine Learning Engineer</div>
@@ -277,7 +301,6 @@
                     <li><strong>MLOps Governance:</strong> Established comprehensive governance with MLflow, GitHub Actions CI/CD, and automated monitoring with Prometheus/Grafana</li>
                 </ul>
             </div>
-
             <div class="experience-item">
                 <div class="company">Tata Elxsi</div>
                 <div class="job-title">Machine Learning Engineer</div>
@@ -289,7 +312,6 @@
                 </ul>
             </div>
         </section>
-
         <section>
             <h2>Technical Skills</h2>
             <div class="skills-grid">
@@ -307,7 +329,6 @@
                         <span class="skill-tag">Fine-tuning</span>
                     </div>
                 </div>
-
                 <div class="skill-category">
                     <h3>🧠 ML & Deep Learning</h3>
                     <div class="skill-tags">
@@ -321,7 +342,6 @@
                         <span class="skill-tag">NLP</span>
                     </div>
                 </div>
-
                 <div class="skill-category">
                     <h3>🗄️ Vector Databases</h3>
                     <div class="skill-tags">
@@ -331,7 +351,6 @@
                         <span class="skill-tag">ChromaDB</span>
                     </div>
                 </div>
-
                 <div class="skill-category">
                     <h3>☁️ Cloud & Infrastructure</h3>
                     <div class="skill-tags">
@@ -344,7 +363,6 @@
                         <span class="skill-tag">Snowflake</span>
                     </div>
                 </div>
-
                 <div class="skill-category">
                     <h3>⚙️ MLOps & Deployment</h3>
                     <div class="skill-tags">
@@ -358,7 +376,6 @@
                         <span class="skill-tag">Grafana</span>
                     </div>
                 </div>
-
                 <div class="skill-category">
                     <h3>🔧 Data Engineering</h3>
                     <div class="skill-tags">
@@ -371,7 +388,6 @@
                         <span class="skill-tag">ETL/ELT</span>
                     </div>
                 </div>
-
                 <div class="skill-category">
                     <h3>💻 Programming</h3>
                     <div class="skill-tags">
@@ -382,7 +398,6 @@
                         <span class="skill-tag">C++</span>
                     </div>
                 </div>
-
                 <div class="skill-category">
                     <h3>🔍 Model Interpretability</h3>
                     <div class="skill-tags">
@@ -393,30 +408,26 @@
                 </div>
             </div>
         </section>
-
         <section>
             <h2>Education</h2>
             <div class="education-item">
                 <div class="company">University of Dayton</div>
                 <div class="job-title">Master of Science, Computer Science</div>
                 <div class="duration">Aug 2023 - May 2025</div>
-                <p>Coursework: Advanced Computer Vision, Mobile Pervasive Computing, Generative and Agentic AI Systems</p>
+                <p style="color: #515154; margin-top: 1rem;">Coursework: Advanced Computer Vision, Mobile Pervasive Computing, Generative and Agentic AI Systems</p>
             </div>
-
             <div class="education-item">
                 <div class="company">SRM Institute of Science and Technology</div>
                 <div class="job-title">Master of Science, Robotics</div>
                 <div class="duration">Aug 2020 - Jun 2022</div>
-                <p>Coursework: Computer Vision, NLP, AI, Robot Operating System (ROS)</p>
+                <p style="color: #515154; margin-top: 1rem;">Coursework: Computer Vision, NLP, AI, Robot Operating System (ROS)</p>
             </div>
-
             <div class="education-item">
                 <div class="company">Jawaharlal Nehru Technological University</div>
                 <div class="job-title">Bachelor of Technology, Electronics and Communications Engineering</div>
                 <div class="duration">Aug 2014 - May 2018</div>
             </div>
         </section>
-
         <section>
             <h2>Recognition</h2>
             <div class="highlight">
@@ -424,13 +435,13 @@
                 <p>Recognized as top contributor at Tata Elxsi for pioneering AI/ML models, earning full sponsorship for MS in Robotics at SRM Institute</p>
             </div>
         </section>
-
-        <section style="text-align: center;">
-            <h2>Let's Connect</h2>
-            <p style="margin-bottom: 1.5rem; font-size: 1.1rem;">I'm open to new opportunities in Data Science, Gen AI, and Machine Learning Engineering roles.</p>
-            <a href="mailto:gadankipradeepreddy2345@gmail.com" class="cta-button">Get In Touch</a>
+        <section class="cta-section">
+            <div class="container">
+                <h2>Let's Connect</h2>
+                <p>I'm open to new opportunities in Data Science, Gen AI, and Machine Learning Engineering roles.</p>
+                <a href="mailto:gadankipradeepreddy2345@gmail.com" class="cta-button">Get In Touch</a>
+            </div>
         </section>
-
         <footer>
             <p>&copy; 2025 Pradeep Gadanki | All Rights Reserved</p>
             <p style="margin-top: 0.5rem;">Built with passion for AI and Innovation</p>

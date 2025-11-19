@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pradeep Gadanki | Senior Gen AI Engineer</title>
+    <title>Pradeep Gadanki | Data Scientist & Gen AI Engineer</title>
     <style>
         * {
             margin: 0;
@@ -11,696 +11,430 @@
             box-sizing: border-box;
         }
 
-        :root {
-            --black: #1d1d1f;
-            --gray: #86868b;
-            --light-gray: #f5f5f7;
-            --blue: #0071e3;
-            --white: #ffffff;
-        }
-
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.47059;
-            font-weight: 400;
-            letter-spacing: -0.022em;
-            color: var(--black);
-            background: var(--white);
-            -webkit-font-smoothing: antialiased;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
 
         .container {
-            max-width: 980px;
-            margin: 0 auto;
-            padding: 0 22px;
-        }
-
-        .large-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 22px;
+            padding: 20px;
         }
 
         header {
-            background: var(--white);
-            padding: 120px 0 80px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
             text-align: center;
         }
 
         h1 {
-            font-size: 80px;
-            line-height: 1.05;
-            font-weight: 600;
-            letter-spacing: -0.015em;
-            margin-bottom: 16px;
-            color: var(--black);
+            color: #667eea;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
         }
 
-        .tagline {
-            font-size: 28px;
-            line-height: 1.14286;
-            font-weight: 400;
-            letter-spacing: 0.007em;
-            color: var(--black);
-            margin-bottom: 30px;
+        .subtitle {
+            color: #666;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
         }
 
         .contact-links {
             display: flex;
-            gap: 24px;
             justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
             flex-wrap: wrap;
-            margin-top: 24px;
         }
 
         .contact-links a {
-            color: var(--blue);
+            color: #667eea;
             text-decoration: none;
-            font-size: 17px;
-            line-height: 1.23536;
-            font-weight: 400;
-            letter-spacing: -0.022em;
-            transition: opacity 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
+            font-weight: 600;
+            transition: color 0.3s;
         }
 
         .contact-links a:hover {
-            opacity: 0.7;
-        }
-
-        nav {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: saturate(180%) blur(20px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            padding: 20px 0;
-            flex-wrap: wrap;
-        }
-
-        nav a {
-            color: var(--black);
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 400;
-            letter-spacing: -0.016em;
-            transition: opacity 0.3s;
-        }
-
-        nav a:hover {
-            opacity: 0.6;
+            color: #764ba2;
         }
 
         section {
-            padding: 100px 0;
-        }
-
-        section:nth-child(even) {
-            background: var(--light-gray);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            margin-bottom: 2rem;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
         h2 {
-            font-size: 56px;
-            line-height: 1.07143;
-            font-weight: 600;
-            letter-spacing: -0.005em;
-            margin-bottom: 20px;
-            text-align: center;
-            color: var(--black);
-        }
-
-        .section-subtitle {
-            font-size: 24px;
-            line-height: 1.16667;
-            font-weight: 400;
-            letter-spacing: 0.009em;
-            color: var(--gray);
-            text-align: center;
-            margin-bottom: 60px;
+            color: #667eea;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
         }
 
         .summary {
-            max-width: 820px;
-            margin: 0 auto;
-            font-size: 21px;
-            line-height: 1.381;
-            font-weight: 400;
-            letter-spacing: 0.011em;
-            color: var(--black);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
         }
 
-        .summary p {
-            margin-bottom: 28px;
+        .experience-item, .education-item {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .experience-item:last-child, .education-item:last-child {
+            border-bottom: none;
+        }
+
+        .job-title {
+            font-size: 1.4rem;
+            color: #333;
+            font-weight: 700;
+        }
+
+        .company {
+            color: #667eea;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .duration {
+            color: #888;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .experience-item ul, .education-item ul {
+            margin-left: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .experience-item li {
+            margin-bottom: 0.5rem;
+            color: #555;
         }
 
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
-            margin-top: 60px;
+            gap: 1.5rem;
         }
 
         .skill-category {
-            background: var(--white);
-            padding: 40px 32px;
-            border-radius: 18px;
-            transition: transform 0.3s ease;
-        }
-
-        section:nth-child(even) .skill-category {
-            background: var(--white);
-        }
-
-        .skill-category:hover {
-            transform: translateY(-4px);
+            background: linear-gradient(135deg, #667eea15, #764ba215);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border-left: 4px solid #667eea;
         }
 
         .skill-category h3 {
-            font-size: 24px;
-            line-height: 1.16667;
-            font-weight: 600;
-            letter-spacing: 0.009em;
-            color: var(--black);
-            margin-bottom: 16px;
+            color: #667eea;
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
         }
 
-        .skill-category p {
-            font-size: 17px;
-            line-height: 1.47059;
-            font-weight: 400;
-            letter-spacing: -0.022em;
-            color: var(--gray);
-        }
-
-        .experience-timeline {
-            max-width: 820px;
-            margin: 60px auto 0;
-        }
-
-        .experience-item {
-            background: var(--white);
-            padding: 48px 40px;
-            border-radius: 18px;
-            margin-bottom: 24px;
-            transition: transform 0.3s ease;
-        }
-
-        section:nth-child(even) .experience-item {
-            background: var(--white);
-        }
-
-        .experience-item:hover {
-            transform: translateY(-4px);
-        }
-
-        .experience-header {
+        .skill-tags {
             display: flex;
-            justify-content: space-between;
-            align-items: start;
-            margin-bottom: 20px;
             flex-wrap: wrap;
-            gap: 12px;
+            gap: 0.5rem;
         }
 
-        .experience-title {
-            font-size: 28px;
-            line-height: 1.14286;
-            font-weight: 600;
-            letter-spacing: 0.007em;
-            color: var(--black);
+        .skill-tag {
+            background: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #555;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
-        .experience-date {
-            font-size: 14px;
-            line-height: 1.42859;
-            font-weight: 400;
-            letter-spacing: -0.016em;
-            color: var(--gray);
-        }
-
-        .experience-company {
-            font-size: 19px;
-            line-height: 1.42105;
-            font-weight: 400;
-            letter-spacing: 0.012em;
-            color: var(--gray);
-            margin-bottom: 20px;
-        }
-
-        .experience-highlights {
-            list-style: none;
-        }
-
-        .experience-highlights li {
-            padding-left: 20px;
-            margin-bottom: 14px;
-            position: relative;
-            font-size: 17px;
-            line-height: 1.47059;
-            font-weight: 400;
-            letter-spacing: -0.022em;
-            color: var(--black);
-        }
-
-        .experience-highlights li::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: var(--gray);
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 24px;
-            margin-top: 60px;
-        }
-
-        .project-card {
-            background: var(--white);
-            border-radius: 18px;
-            padding: 40px 32px;
-            transition: transform 0.3s ease;
-        }
-
-        section:nth-child(even) .project-card {
-            background: var(--white);
-        }
-
-        .project-card:hover {
-            transform: translateY(-4px);
-        }
-
-        .project-card h3 {
-            font-size: 24px;
-            line-height: 1.16667;
-            font-weight: 600;
-            letter-spacing: 0.009em;
-            color: var(--black);
-            margin-bottom: 8px;
-        }
-
-        .project-date {
-            font-size: 14px;
-            line-height: 1.42859;
-            font-weight: 400;
-            letter-spacing: -0.016em;
-            color: var(--gray);
-            margin-bottom: 16px;
-        }
-
-        .project-description {
-            font-size: 17px;
-            line-height: 1.47059;
-            font-weight: 400;
-            letter-spacing: -0.022em;
-            color: var(--black);
-            margin-bottom: 16px;
-        }
-
-        .project-tech {
-            font-size: 14px;
-            line-height: 1.42859;
-            font-weight: 400;
-            letter-spacing: -0.016em;
-            color: var(--gray);
-            margin-bottom: 20px;
-        }
-
-        .project-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            color: var(--blue);
-            text-decoration: none;
-            font-size: 17px;
-            line-height: 1.23536;
-            font-weight: 400;
-            letter-spacing: -0.022em;
-            transition: opacity 0.3s;
-        }
-
-        .project-link:hover {
-            opacity: 0.7;
-        }
-
-        .education-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
-            max-width: 980px;
-            margin: 60px auto 0;
-        }
-
-        .education-card {
-            background: var(--white);
-            padding: 40px 32px;
-            border-radius: 18px;
+        .highlight {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
             text-align: center;
-            transition: transform 0.3s ease;
         }
 
-        section:nth-child(even) .education-card {
-            background: var(--white);
+        .highlight h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
         }
 
-        .education-card:hover {
-            transform: scale(1.02);
-        }
-
-        .education-card h3 {
-            font-size: 21px;
-            line-height: 1.381;
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
             font-weight: 600;
-            letter-spacing: 0.011em;
-            color: var(--black);
-            margin-bottom: 12px;
+            margin-top: 1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .education-card p {
-            font-size: 17px;
-            line-height: 1.47059;
-            font-weight: 400;
-            letter-spacing: -0.022em;
-            color: var(--gray);
-            margin-bottom: 6px;
-        }
-
-        .education-card p:first-of-type {
-            color: var(--black);
-            font-weight: 500;
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
         }
 
         footer {
-            background: var(--light-gray);
             text-align: center;
-            padding: 60px 0;
-            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
         }
 
-        footer p {
-            font-size: 12px;
-            line-height: 1.33337;
-            font-weight: 400;
-            letter-spacing: -0.01em;
-            color: var(--gray);
-            margin-bottom: 4px;
-        }
-
-        @media (max-width: 1068px) {
+        @media (max-width: 768px) {
             h1 {
-                font-size: 64px;
+                font-size: 2rem;
             }
 
-            h2 {
-                font-size: 48px;
+            .subtitle {
+                font-size: 1.1rem;
             }
 
-            .tagline {
-                font-size: 24px;
-            }
-        }
-
-        @media (max-width: 734px) {
-            h1 {
-                font-size: 48px;
-            }
-
-            h2 {
-                font-size: 40px;
-            }
-
-            .tagline {
-                font-size: 21px;
-            }
-
-            section {
-                padding: 60px 0;
-            }
-
-            .skills-grid,
-            .projects-grid,
-            .education-grid {
+            .skills-grid {
                 grid-template-columns: 1fr;
             }
-
-            .experience-item,
-            .skill-category,
-            .project-card,
-            .education-card {
-                padding: 32px 24px;
-            }
-        }
-
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
+    <div class="container">
+        <header>
             <h1>Pradeep Gadanki</h1>
-            <p class="tagline">Senior Gen AI Engineer</p>
+            <p class="subtitle">Data Scientist | Gen AI Engineer | ML Architect</p>
             <div class="contact-links">
-                <a href="mailto:gadankipradeepreddy2345@gmail.com">gadankipradeepreddy2345@gmail.com</a>
-                <a href="https://linkedin.com/in/pradeeepreddy1" target="_blank">LinkedIn</a>
-                <a href="https://github.com/PradeepGadanki" target="_blank">GitHub</a>
+                <a href="mailto:gadankipradeepreddy2345@gmail.com">📧 Email</a>
+                <a href="https://linkedin.com/in/pradeepgadanki" target="_blank">💼 LinkedIn</a>
+                <a href="https://github.com/pradeepgadanki" target="_blank">💻 GitHub</a>
+                <a href="tel:+14424458260">📱 (442) 445-8260</a>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#education">Education</a></li>
-        </ul>
-    </nav>
-
-    <section id="about">
-        <div class="container">
-            <h2>About</h2>
-            <p class="section-subtitle">Building intelligent systems with AI</p>
-            <div class="summary fade-in">
-                <p>Accomplished Senior Gen AI Engineer with over 7+ years of progressive experience architecting intelligent systems, with focus on Gen AI frameworks combining LLMs, RAG pipelines, and modular toolchains for autonomous decision-making, advanced machine learning and NLP solutions across various domains.</p>
-                
-                <p>Specialized in developing domain-specific LLM agents capable of chaining reasoning steps across APIs, vector databases, and SQL systems, enabling autonomous document summarization, data extraction, and task automation with multi-agent orchestration patterns.</p>
-                
-                <p>Expert in building and orchestrating retrieval-augmented generation pipelines with custom routing logic for agentic workflows, enabling multi-modal inputs and iterative refinement loops via LangChain, LangGraph, LlamaIndex, and Azure ML.</p>
+        <section>
+            <div class="highlight">
+                <h3>🚀 7+ Years Building Production-Scale AI Systems</h3>
+                <p>Specialized in LLMs, RAG Pipelines, MLOps & Enterprise AI Architecture</p>
             </div>
-        </div>
-    </section>
+            
+            <h2>About Me</h2>
+            <p class="summary">
+                Accomplished Data Scientist with 7+ years of experience designing and deploying production-scale ML, NLP, and Generative AI systems (LLMs, RAG pipelines) across cloud environments. Expert in building enterprise-grade AI architectures that automate customer service, content generation, and decision intelligence workflows. Proven track record leading the full ML lifecycle from data engineering and feature store design to scalable deployment and cross-functional delivery that drives measurable business impact.
+            </p>
+        </section>
 
-    <section id="skills">
-        <div class="large-container">
+        <section>
+            <h2>Featured Projects & Experience</h2>
+            
+            <div class="experience-item">
+                <div class="company">Cognizant</div>
+                <div class="job-title">Senior Data Scientist - Gen AI</div>
+                <div class="duration">Nov 2024 - Oct 2025</div>
+                <ul>
+                    <li><strong>LLM-Powered Merchant Insights Platform:</strong> Developed using map-reduce + RAG techniques to transform emails, surveys, and call transcripts into actionable insights with conversational query capabilities</li>
+                    <li><strong>Feature Store Architecture:</strong> Designed feature stores and vector databases using Delta Lake, Pinecone, and Feast to standardize feature consistency across batch and real-time inference pipelines</li>
+                    <li><strong>MLOps Infrastructure:</strong> Implemented MLflow for experiment tracking and developed interpretable AI solutions (SHAP/LIME) achieving regulatory compliance</li>
+                    <li><strong>Production Deployment:</strong> Containerized models with Docker and Kubernetes for scalable, fault-tolerant inference APIs secured with OAuth2 authentication</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="company">University of Dayton</div>
+                <div class="job-title">Graduate Research Assistant</div>
+                <div class="duration">Jan 2024 - Oct 2024</div>
+                <ul>
+                    <li>Developed predictive models on AWS EC2 for chronic disease risk evaluation, enabling proactive interventions that saved <strong>$2.1 million in healthcare costs</strong></li>
+                    <li>Collaborated with PhD research scientists at Premier Health integrating real-world clinical data</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="company">Tata Elxsi</div>
+                <div class="job-title">Senior Machine Learning Engineer</div>
+                <div class="duration">Apr 2021 - Aug 2023</div>
+                <ul>
+                    <li><strong>Customer Sentiment Analysis System:</strong> Led design using PyTorch 2.0 and Hugging Face Transformers with LangChain workflows</li>
+                    <li><strong>Distributed Training Pipelines:</strong> Engineered scalable pipelines using TensorFlow 2.11 and PyTorch 2.0 on Kubeflow, orchestrating multi-node GPU clusters</li>
+                    <li><strong>Microservices ML Infrastructure:</strong> Architected Kubernetes-based serving infrastructure with blue-green deployments via FastAPI and Azure API Management</li>
+                    <li><strong>MLOps Governance:</strong> Established comprehensive governance with MLflow, GitHub Actions CI/CD, and automated monitoring with Prometheus/Grafana</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="company">Tata Elxsi</div>
+                <div class="job-title">Machine Learning Engineer</div>
+                <div class="duration">Jul 2018 - Mar 2021</div>
+                <ul>
+                    <li>Engineered high-impact credit risk models (Python, XGBoost) supporting risk stratification strategies</li>
+                    <li>Automated model training pipelines on Azure Databricks, PySpark, and Airflow</li>
+                    <li>Delivered interactive explainability dashboards in Tableau for model transparency</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
             <h2>Technical Skills</h2>
-            <p class="section-subtitle">Expertise across the AI stack</p>
             <div class="skills-grid">
-                <div class="skill-category fade-in">
-                    <h3>LLM & Agentic AI</h3>
-                    <p>LangChain, LangGraph, LlamaIndex, Hugging Face Transformers, LLaMA, Falcon, Mistral, OpenAI, Vector Databases (Pinecone, Weaviate, ChromaDB, FAISS, Qdrant), Semantic Caching, Prompt Engineering</p>
+                <div class="skill-category">
+                    <h3>🤖 Gen AI & LLMs</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">LangChain</span>
+                        <span class="skill-tag">RAG Architecture</span>
+                        <span class="skill-tag">OpenAI API</span>
+                        <span class="skill-tag">Azure OpenAI</span>
+                        <span class="skill-tag">LLaMA</span>
+                        <span class="skill-tag">GPT</span>
+                        <span class="skill-tag">BERT</span>
+                        <span class="skill-tag">Prompt Engineering</span>
+                        <span class="skill-tag">Fine-tuning</span>
+                    </div>
                 </div>
-                <div class="skill-category fade-in">
-                    <h3>Machine Learning</h3>
-                    <p>Supervised Learning, Deep Learning, Neural Networks, NLP, Computer Vision, Reinforcement Learning, MLOps, AutoML, Feature Engineering, Model Selection, Hyperparameter Tuning</p>
+
+                <div class="skill-category">
+                    <h3>🧠 ML & Deep Learning</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">TensorFlow</span>
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">Scikit-learn</span>
+                        <span class="skill-tag">XGBoost</span>
+                        <span class="skill-tag">Hugging Face</span>
+                        <span class="skill-tag">Neural Networks</span>
+                        <span class="skill-tag">Computer Vision</span>
+                        <span class="skill-tag">NLP</span>
+                    </div>
                 </div>
-                <div class="skill-category fade-in">
-                    <h3>Deep Learning Frameworks</h3>
-                    <p>TensorFlow, PyTorch, Keras, Scikit-learn, XGBoost, LightGBM, CatBoost, Hugging Face Transformers</p>
+
+                <div class="skill-category">
+                    <h3>🗄️ Vector Databases</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Pinecone</span>
+                        <span class="skill-tag">Weaviate</span>
+                        <span class="skill-tag">FAISS</span>
+                        <span class="skill-tag">ChromaDB</span>
+                    </div>
                 </div>
-                <div class="skill-category fade-in">
-                    <h3>Cloud Platforms</h3>
-                    <p>AWS (SageMaker, EC2, S3, Lambda, Redshift), Microsoft Azure (Machine Learning Studio, Data Factory), Azure Databricks, AKS</p>
+
+                <div class="skill-category">
+                    <h3>☁️ Cloud & Infrastructure</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">Azure</span>
+                        <span class="skill-tag">GCP</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Kubernetes</span>
+                        <span class="skill-tag">Databricks</span>
+                        <span class="skill-tag">Snowflake</span>
+                    </div>
                 </div>
-                <div class="skill-category fade-in">
-                    <h3>Data Engineering</h3>
-                    <p>Apache Spark, Hadoop, Kafka, Airflow, ETL/ELT, Data Pipelines, Apache Beam, Databricks, Snowflake, dbt, Delta Lake, Feast</p>
+
+                <div class="skill-category">
+                    <h3>⚙️ MLOps & Deployment</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">MLflow</span>
+                        <span class="skill-tag">Kubeflow</span>
+                        <span class="skill-tag">CI/CD</span>
+                        <span class="skill-tag">GitHub Actions</span>
+                        <span class="skill-tag">Feast</span>
+                        <span class="skill-tag">DVC</span>
+                        <span class="skill-tag">Prometheus</span>
+                        <span class="skill-tag">Grafana</span>
+                    </div>
                 </div>
-                <div class="skill-category fade-in">
-                    <h3>DevOps & MLOps</h3>
-                    <p>Docker, Kubernetes, Git, CI/CD, Jenkins, MLflow, Kubeflow, DVC, Model Deployment, GitHub Actions, Azure DevOps</p>
+
+                <div class="skill-category">
+                    <h3>🔧 Data Engineering</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Apache Spark</span>
+                        <span class="skill-tag">PySpark</span>
+                        <span class="skill-tag">Airflow</span>
+                        <span class="skill-tag">Kafka</span>
+                        <span class="skill-tag">dbt</span>
+                        <span class="skill-tag">Delta Lake</span>
+                        <span class="skill-tag">ETL/ELT</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>💻 Programming</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">R</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">Scala</span>
+                        <span class="skill-tag">C++</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>🔍 Model Interpretability</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">SHAP</span>
+                        <span class="skill-tag">LIME</span>
+                        <span class="skill-tag">Feature Importance</span>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="experience">
-        <div class="container">
-            <h2>Experience</h2>
-            <p class="section-subtitle">Building AI solutions at scale</p>
-            <div class="experience-timeline">
-                <div class="experience-item fade-in">
-                    <div class="experience-header">
-                        <div>
-                            <div class="experience-title">Graduate Research Assistant</div>
-                            <div class="experience-company">University of Dayton</div>
-                        </div>
-                        <div class="experience-date">January 2024 - May 2025</div>
-                    </div>
-                    <ul class="experience-highlights">
-                        <li>Architected production-ready multi-modal RAG pipelines processing large-scale medical documents and images, integrating LangChain, LangGraph, LlamaIndex, and GPT-4 Vision/Turbo for clinical decision support systems</li>
-                        <li>Engineered hybrid retrieval combining dense embeddings, sparse retrieval (BM25, ColBERT v2), and graph-based retrieval (Neo4j) with reciprocal rank fusion</li>
-                        <li>Implemented vision-language models using CLIP, BiomedCLIP, GPT-4 Vision, and LLaVA-Med for processing medical images alongside textual context</li>
-                        <li>Developed semantic caching with Redis and ChromaDB reducing inference costs by 60% and latency by 45%</li>
-                        <li>Built comprehensive evaluation framework using RAGAS metrics with expert physician feedback loops</li>
-                    </ul>
-                </div>
-
-                <div class="experience-item fade-in">
-                    <div class="experience-header">
-                        <div>
-                            <div class="experience-title">Machine Learning Engineer</div>
-                            <div class="experience-company">Tata Elxsi</div>
-                        </div>
-                        <div class="experience-date">July 2020 – August 2023</div>
-                    </div>
-                    <ul class="experience-highlights">
-                        <li>Led end-to-end design and deployment of production-scale visual search and recommendation system processing 200M+ images daily using PyTorch, Hugging Face Transformers, and vision foundation models</li>
-                        <li>Architected representation learning pipeline using contrastive training (SimCLR, MoCo) with self-supervised learning achieving high retrieval precision</li>
-                        <li>Designed feature infrastructure with Delta Lake on Azure Databricks and Pinecone with HNSW indexing, managing 500-dimensional embeddings with sub-50ms p95 retrieval latency</li>
-                        <li>Built hybrid ranking system combining dense embeddings with sparse retrieval and business logic re-ranking using reciprocal rank fusion</li>
-                        <li>Implemented approximate nearest neighbor search using Faiss enabling billion-scale similarity search with sub-100ms latency</li>
-                    </ul>
-                </div>
-
-                <div class="experience-item fade-in">
-                    <div class="experience-header">
-                        <div>
-                            <div class="experience-title">Machine Learning Engineer</div>
-                            <div class="experience-company">Cognizant</div>
-                        </div>
-                        <div class="experience-date">August 2018 – July 2020</div>
-                    </div>
-                    <ul class="experience-highlights">
-                        <li>Developed customer sentiment analysis system using PyTorch, TensorFlow, and Hugging Face Transformers (BERT, RoBERTa) processing unstructured feedback from multiple sources</li>
-                        <li>Designed feature infrastructure with Delta Lake, Pinecone vector databases, and Feast ensuring consistent feature versioning</li>
-                        <li>Pioneered early-stage generative AI workflows combining LangChain with Hugging Face models for automated response generation</li>
-                        <li>Developed multi-lingual sentiment analysis supporting 10+ languages using multilingual transformers</li>
-                        <li>Built interactive dashboards using Amazon QuickSight and Tableau integrating ML predictions with business metrics</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects">
-        <div class="large-container">
-            <h2>Projects</h2>
-            <p class="section-subtitle">Innovation in action</p>
-            <div class="projects-grid">
-                <div class="project-card fade-in">
-                    <h3>Cafe Agent with LangGraph</h3>
-                    <p class="project-date">May 2025</p>
-                    <p class="project-description">Developed an intelligent cafe ordering agent using LangGraph and large language models to process natural language inputs and automate order workflows with robust conversational capabilities.</p>
-                    <p class="project-tech">Python, LangGraph, LLMs, NLP</p>
-                    <a href="https://github.com/PradeepGadanki/LLMS/tree/main/Cafe agent with LangGraph" target="_blank" class="project-link">View on GitHub →</a>
-                </div>
-
-                <div class="project-card fade-in">
-                    <h3>Blood Pressure Prediction</h3>
-                    <p class="project-date">February 2025</p>
-                    <p class="project-description">Hybrid AI system combining LSTM models for time-series BP prediction with Generative AI and RAG pipelines for transparent clinical decision support. Integrated SHAP and attention layers for explainability.</p>
-                    <p class="project-tech">TensorFlow, Keras, SHAP, GPT-4, LangChain, FAISS, FastAPI, Docker</p>
-                    <a href="https://github.com/PradeepGadanki/Blood-pressure-predicJon-LSTM/tree/main/Blood pressure predicJon LSTM" target="_blank" class="project-link">View on GitHub →</a>
-                </div>
-
-                <div class="project-card fade-in">
-                    <h3>LIO-Fusion SLAM System</h3>
-                    <p class="project-date">August 2024</p>
-                    <p class="project-description">Developed real-time SLAM system using LIO-Fusion to fuse 3D LiDAR point clouds with high-frequency IMU data for robust odometry in dynamic environments.</p>
-                    <p class="project-tech">ROS, C++, PCL, IMU, LiDAR, YAML</p>
-                    <a href="https://github.com/PradeepGadanki/ADAS/tree/main/LIO-Fusion" target="_blank" class="project-link">View on GitHub →</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="education">
-        <div class="container">
+        <section>
             <h2>Education</h2>
-            <p class="section-subtitle">Academic foundation</p>
-            <div class="education-grid">
-                <div class="education-card fade-in">
-                    <h3>Master of Science</h3>
-                    <p>Computer Science</p>
-                    <p>University of Dayton</p>
-                    <p>2025</p>
-                </div>
-
-                <div class="education-card fade-in">
-                    <h3>Master of Technology</h3>
-                    <p>Robotics</p>
-                    <p>SRM Institute of Science and Technology</p>
-                    <p>2022</p>
-                </div>
-
-                <div class="education-card fade-in">
-                    <h3>Bachelor of Technology</h3>
-                    <p>Electronics and Communication Engineering</p>
-                    <p>Sri Venkateswara College of Engineering and Technology</p>
-                    <p>2018</p>
-                </div>
+            <div class="education-item">
+                <div class="company">University of Dayton</div>
+                <div class="job-title">Master of Science, Computer Science</div>
+                <div class="duration">Aug 2023 - May 2025</div>
+                <p>Coursework: Advanced Computer Vision, Mobile Pervasive Computing, Generative and Agentic AI Systems</p>
             </div>
-        </div>
-    </section>
 
-    <footer>
-        <div class="container">
-            <p>© 2025 Pradeep Gadanki. All rights reserved.</p>
-            <p>Senior Gen AI Engineer | Machine Learning | Deep Learning | NLP</p>
-        </div>
-    </footer>
+            <div class="education-item">
+                <div class="company">SRM Institute of Science and Technology</div>
+                <div class="job-title">Master of Science, Robotics</div>
+                <div class="duration">Aug 2020 - Jun 2022</div>
+                <p>Coursework: Computer Vision, NLP, AI, Robot Operating System (ROS)</p>
+            </div>
 
-    <script>
-        // Smooth scrolling
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            });
-        });
+            <div class="education-item">
+                <div class="company">Jawaharlal Nehru Technological University</div>
+                <div class="job-title">Bachelor of Technology, Electronics and Communications Engineering</div>
+                <div class="duration">Aug 2014 - May 2018</div>
+            </div>
+        </section>
 
-        // Fade in animation
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+        <section>
+            <h2>Recognition</h2>
+            <div class="highlight">
+                <h3>🏆 Elite Performer Award</h3>
+                <p>Recognized as top contributor at Tata Elxsi for pioneering AI/ML models, earning full sponsorship for MS in Robotics at SRM Institute</p>
+            </div>
+        </section>
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
+        <section style="text-align: center;">
+            <h2>Let's Connect</h2>
+            <p style="margin-bottom: 1.5rem; font-size: 1.1rem;">I'm open to new opportunities in Data Science, Gen AI, and Machine Learning Engineering roles.</p>
+            <a href="mailto:gadankipradeepreddy2345@gmail.com" class="cta-button">Get In Touch</a>
+        </section>
 
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
-    </script>
+        <footer>
+            <p>&copy; 2025 Pradeep Gadanki | All Rights Reserved</p>
+            <p style="margin-top: 0.5rem;">Built with passion for AI and Innovation</p>
+        </footer>
+    </div>
 </body>
 </html>
